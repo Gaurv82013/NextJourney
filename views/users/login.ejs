@@ -1,0 +1,50 @@
+<% layout('/layouts/boilerplate') -%>
+<button class="btn btn-outline-dark" onclick="window.history.back()">
+        <i class="fa-solid fa-arrow-left"></i> Go Back
+    </button>
+    <br>
+    <br>
+
+<!-- Scoped stylesheet only for this page -->
+<link rel="stylesheet" href="/css/login.css">
+
+<div class="loginpPage">
+    <div class="login-cards">
+        <!-- Left: media hero -->
+        <aside class="login-card">
+            <div class="login-hero-content">
+
+                <div>
+                    <h2>Your next adventure awaits!</h2>
+                    <p>
+                        Log in to unlock exclusive deals, plan your dream escapes, and pick up where you left off.
+                        Whether it's mountains, beaches, or city lights—your journey starts here.
+                    </p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right: form -->
+        <section class="login-form">
+            <h3>Welcome back!</h3>
+            <p>Please enter your details to sign in.</p>
+
+            <form class="needs-validation" action="/login" method="POST" novalidate>
+                
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" id="username" name="username" required class="form-control" placeholder="Enter your username">
+                    <br>
+                
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" required class="form-control" placeholder="••••••••">
+                    <br>
+
+                <button class="login-btn-primary" type="submit" style="display: flex; align-items: center; justify-content: center;">Sign in</button>
+
+                <div class="text-center mt-3">
+                    <p>Don't have an account? <a href="/signup" class="link-primary">Sign Up</a></p>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>

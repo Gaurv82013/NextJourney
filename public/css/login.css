@@ -1,0 +1,102 @@
+/* Styles specific to the login page */
+.main-content > .container {
+  max-width: 1200px;
+}
+
+.loginPage {
+  padding: 32px 0 56px;
+}
+
+.login-cards {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(16, 24, 40, 0.18);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  min-height: 560px;
+}
+
+/* Left media panel */
+.login-card {
+  position: relative;
+  background:url('/img/loginPage.png') center/cover no-repeat;
+}
+
+.login-card::after {
+  /* dark vignette overlay */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 120% at 10% 10%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.75) 100%);
+}
+
+.login-hero-content {
+  position: absolute;
+  inset: 0;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #f4f6f7;
+  z-index: 1;
+}
+
+
+/* Right side form */
+.login-form {
+  padding: 36px 40px;
+  background: #ffffff;
+}
+.login-form h3 {
+  margin-bottom: 6px;
+}
+
+.login-btn-primary {
+  width: 100%;
+  height: 42px;
+  border-radius: 10px;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+
+/* Responsiveness (simple + phone-first) */
+@media (max-width: 768px) {
+  .main-content > .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .login-cards {
+    grid-template-columns: 1fr;   /* stack panels */
+    min-height: unset;
+    border-radius: 14px;
+  }
+   /* Was .login-hero (non-existent). Use .login-card instead. */
+  .login-card {
+    min-height: 300px;            /* hero height on phones */
+    background-position: center;
+  }
+
+  .login-form {
+    padding: 20px 16px;
+    background: #fff;
+  }
+  /* Bigger tap targets + prevent iOS zoom */
+  .login-form input,
+  .login-form select,
+  .login-form textarea {
+    width: 100%;
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .login-btn-primary {
+    height: 48px;
+    border-radius: 12px;
+  }
+   /* Simple vertical spacing */
+  .login-form > * + * { margin-top: 12px; }
+}

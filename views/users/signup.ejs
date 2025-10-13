@@ -1,0 +1,56 @@
+<% layout('/layouts/boilerplate') -%>
+    <link rel="stylesheet" href="/css/signup.css">
+    <button class="btn btn-outline-dark" onclick="window.history.back()">
+        <i class="fa-solid fa-arrow-left"></i> Go Back
+    </button>
+    <br>
+    <br>
+
+<div class="signup-shell mb-4 mt-3">
+
+    <div class="signup-card">
+        <!-- Left: scenic hero with overlay copy -->
+        <div class="signup-hero">
+            <!-- top-left large heading like reference -->
+            <div class="signup-hero-top">
+                <h1>Welcome Adventurer! The World Awaits.</h1>
+                <h2>Embark On Your Next Journey</h2>
+            </div>
+            <!-- bottom-left translucent card copy -->
+            <div class="signup-hero-card">
+                <h3>Wander, Explore, Experience</h3>
+                <p>Unlock New Destinations, Exclusive Deals,
+                And Travel Inspiration Tailored Just For You.</p>
+            </div>
+        </div>
+
+        <!-- Right: sign up form -->
+        <div class="signup-form">
+    
+            <h3>Create Your Account</h3>
+
+            <form class="needs-validation" action="/signup" method="POST" novalidate>
+                <div class="mb-3">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" required class="form-control auth-input" placeholder="Email">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="username">Username</label>
+                    <input type="text" id="username" name="username" required class="form-control auth-input" placeholder="Username">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" name="password" required class="form-control auth-input" placeholder="Password">
+                </div>
+
+                <button class="btn btn-primary btn-pill w-100" type="submit" style="display: flex; align-items: center; justify-content: center;">Sign Up</button>
+            </form>
+
+            <div class="text-center mt-3">
+                <p>Already have an account? <a href="/login" class="link-primary">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+</div>

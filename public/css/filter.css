@@ -1,0 +1,133 @@
+/* styling for filters */
+.filter-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.filters{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.2rem;
+    padding: 1rem;
+    overflow-x: auto !important;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+    padding-top: .4rem;
+    flex-wrap: nowrap;
+    border: 1px solid #eee;
+    border-radius: 48px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    width: 100%; 
+    scrollbar-width: none; /* Firefox */
+}
+.filters::-webkit-scrollbar{ display: none; }
+
+.filters:hover{
+    box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+    border-color: var(--accent);
+}
+.filter-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 0 0 auto;                 /* keep consistent width and enable scroll */
+    padding: .45rem .65rem;
+    text-align: center;
+    scroll-snap-align: start;
+    text-decoration: none;
+}
+.filter-form > button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    min-width: 110px;
+    padding: .1rem 0;
+    border: none;
+    background: transparent;
+}
+.filter-form i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--accent);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.filter-form p{
+    margin: 0;
+    line-height: 1.1;
+    font-size: 1.05rem;
+    color: #222;
+    white-space: nowrap;
+}
+.filter-form > button:hover i{ transform: translateY(-2px); }
+.filter-form > button:focus-visible{ outline:none;}
+
+/* Scroll Buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background: #f7f7f7;
+}
+
+.scroll-btn.left {
+  left: 0.3rem;
+}
+
+.scroll-btn.right {
+  right: 0.3rem;
+}
+
+.scroll-btn i {
+  font-size: 16px;
+  color: #ff385c;
+}
+
+/* Mobile-first responsive filters: horizontal scroll on small screens */
+@media (max-width: 1000px){
+    .filters{
+        justify-content: flex-start;   /* align items to start for scrolling */
+        flex-wrap: nowrap;             /* single row */
+        gap: 0.1rem !important;                 /* tighter spacing on mobile */
+        padding: .35rem .5rem;         /* compact padding */
+        overflow-x: auto;              /* enable horizontal scroll */
+        scroll-snap-type: x proximity; 
+    }
+
+    /* Hide scrollbars where possible (progressive enhancement) */
+    #filters::-webkit-scrollbar{ display: none; }
+
+    .filter-form{ padding: .35rem 0rem; }
+    .filter-form i{ font-size: 1.15rem; }
+    .filter-form p{ font-size: .86rem; margin: 0; }
+    
+}

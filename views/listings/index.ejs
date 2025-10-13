@@ -1,0 +1,137 @@
+<% layout('/layouts/boilerplate') -%>
+<link rel="stylesheet" href="/css/filter.css">
+
+    <div class="filter-container">
+        <button class="scroll-btn left" id="scroll-left">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+            <div class="filters" id="filters">
+                <a href="/listings" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-list"></i>
+                        <p>All</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Mountain" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-mountain"></i>
+                        <p>Mountain</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Amazing Pools" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-person-swimming"></i>
+                        <p>Amazing Pools</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Rooms" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-bed"></i>
+                        <p>Rooms</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Farms" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-cow"></i>
+                        <p>Farms</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Iconic City" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-mountain-city"></i>
+                        <p>Iconic City</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Castles" class="filter-form">
+                    <button type="button">
+                        <i class="fa-brands fa-fort-awesome"></i>
+                        <p>Castles</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Trending" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-fire"></i>
+                        <p>Trending</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Amazing Views" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-mountain-sun"></i>
+                        <p>Amazing Views</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Cabins" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-house-chimney-window"></i>
+                        <p>Cabins</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Beach" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-umbrella-beach"></i>
+                        <p>Beach</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Desert" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-ice-cream"></i>
+                        <p>Desert</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Island" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-ship"></i>
+                        <p>Island</p>
+                    </button>
+                </a>
+                <a href="/listings?category=Treehouses" class="filter-form">
+                    <button type="button">
+                        <i class="fa-solid fa-tree-city"></i>
+                        <p>Treehouses</p>
+                    </button>
+                </a>
+                
+            </div>
+        <button class="scroll-btn right" id="scroll-right">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+     <!-- display search term if present -->
+    <% if (typeof search !== 'undefined' && search) { %>
+        <h4 class="mt-4">Search results for "<%= search %>"</h4>
+    <% } %>
+    
+    <!-- display category filter if present -->
+    <% if (typeof category !== 'undefined' && category) { %>
+        <h4 class="mt-4">Showing listings in category: "<%= category %>"</h4>
+    <% } %>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-3">
+        <% if (allListings.length === 0) { %>
+            <div class="col">
+                <div class="alert alert-warning" style="text-align: center;">No listings found.</div>
+            </div>
+        <% } %>
+
+
+        <!-- display all listings -->
+        <% for(let listing of allListings){%>
+            <div class="col">
+                <a href="/listings/<%=listing.id%>">
+                    <div class="card mainCard">
+                        <img src="<%=listing.image.url%>" class="card-img-top" alt="<%= listing.title %>">
+                        <div class="card-img-overlay"></div>
+                        <div class="card-body">
+                            <p class="body-text">
+                                <b><%= listing.title %></b><br>
+                                &#8377; <%= listing.price.toLocaleString("en-IN") %>/ night
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <% } %>
+    </div>
+
+<script src="/js/scroll.js"></script>
+
