@@ -25,7 +25,6 @@
     content:"";
     position:absolute;
     inset:0;
-    background:radial-gradient(120% 120% at 10% 10%,rgba(0,0,0,.2) 0%,rgba(0,0,0,.55) 70%,rgba(0,0,0,.75) 100%);
 }
 /* Top-left headline area */
 .signup-hero-top{
