@@ -76,11 +76,11 @@
 
   #Sign Up page
 
-  <img width="1917" height="876" alt="Screenshot 2025-10-13 150421" src="https://github.com/user-attachments/assets/73282a28-7817-4a6c-af4a-ad49e3eb51fc" />
+  <img width="1919" height="897" alt="Screenshot 2025-10-16 171544" src="https://github.com/user-attachments/assets/47d7ff34-5cc8-47cc-a88e-b7858cd43438" />
 
   #Sign-in page
 
-  <img width="1919" height="888" alt="Screenshot 2025-10-13 150441" src="https://github.com/user-attachments/assets/39dc9368-8de0-4227-9b54-cf692f7a05b4" />
+  <img width="1919" height="892" alt="Screenshot 2025-10-16 171705" src="https://github.com/user-attachments/assets/4fd0d718-8de5-4951-b10c-3814c6f27c50" />
 
   #Add new listing page
 
