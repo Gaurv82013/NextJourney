@@ -103,7 +103,7 @@
 
 @media (max-width: 900px){
     .signup-card{grid-template-columns:1fr}
-    .signup-hero{min-height:260px}
+    .signup-hero{min-height:400px}
     .signup-hero-top{left:18px;right:18px;top:18px}
     .signup-hero-card{left:18px;right:18px;bottom:18px;max-width:unset}
 }

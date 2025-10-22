@@ -73,11 +73,13 @@
     min-height: unset;
     border-radius: 14px;
   }
+  
    /* Was .login-hero (non-existent). Use .login-card instead. */
   .login-card {
-    min-height: 300px;            /* hero height on phones */
+    min-height: 400px;            /* hero height on phones */
     background-position: center;
   }
+
 
   .login-form {
     padding: 20px 16px;
